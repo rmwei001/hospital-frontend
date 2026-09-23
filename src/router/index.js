@@ -5,7 +5,7 @@ import Login from '../Components/Login.vue'
 import Patients from '../Components/Patients.vue'
 import Profile from '../Components/Profile.vue'
 import Signup from '../Components/Signup.vue'
-import ViewPatients from '../Components/ViewPatients.vue'
+import ViewPatients from '../Components/ViewPatient.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +29,7 @@ const router = createRouter({
     {path: '/signup',
       component: Signup
     },
-    {path: '/viewpatients',
+    {path: '/viewpatient',
       component: ViewPatients
     }
   ],
