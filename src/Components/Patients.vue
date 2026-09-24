@@ -136,9 +136,10 @@ const showAddDialog = ref(false)
           <v-col md="6">
             <v-text-field label="National ID" variant="outlined" prepend-icon="mdi-id-card"></v-text-field>
           </v-col>
+        </v-row>
           <v-col md="6">
             <v-text-field label="Residence" variant="outlined" prepend-icon="mdi-home-outline"></v-text-field>
-             <v-divider class="mb-4" color="primary" opacity=".7" thickness="3" gradient></v-divider>
+          <v-divider class="mb-4" color="primary" opacity=".7" thickness="3" gradient></v-divider>
              <v-row>
               <v-col>
                 <v-card-actions>
@@ -149,7 +150,6 @@ const showAddDialog = ref(false)
               </v-col>
              </v-row>
           </v-col>
-        </v-row>
       </v-card>
     </v-form>
   </v-dialog>
