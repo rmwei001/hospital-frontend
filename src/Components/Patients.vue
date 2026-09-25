@@ -50,6 +50,33 @@ const patients =[
 
 const showAddDialog = ref(false)
 
+//models
+const firstName = ref(null)
+const lastName = ref(null)
+const dob = ref(null)
+const age = ref(null)
+const phone = ref(null)
+const email = ref(null)
+const nationalId = ref(null)
+const residence = ref(null)
+
+function handleAddPatient(){
+  const data = {
+    id: 5,
+    firstName: firstName.value,
+    lastName: lastName.value,
+    dob: dob.value,
+    age: age.value,
+    phone: phone.value,
+    email: email.value,
+    nationaId: nationalId.value,
+    residence: residence.value,
+  }
+    patients:push(data)
+    showAddDialog.value = false
+    console.log(patients)
+}
+
 </script>
 
 <template>
@@ -110,42 +137,42 @@ const showAddDialog = ref(false)
         <v-divider class="mb-4" color="primary" opacity=".7" thickness="3" gradient></v-divider>
         <v-row>
           <v-col md="6">
-            <v-text-field label="First Name" variant="outlined" prepend-icon="mdi-account-outline"></v-text-field>
+            <v-text-field label="First Name" v-model="firstName" variant="outlined" prepend-icon="mdi-account-outline"></v-text-field>
           </v-col>
           <v-col md="6">
-            <v-text-field label="Last Name" variant="outlined" prepend-icon="mdi-account-outline"></v-text-field>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col md="6">
-            <v-date-input label="Date of Birth" variant="outlined" prepend-icon="mdi-calendar-range"></v-date-input>
-          </v-col>
-          <v-col md="6">
-            <v-text-field label="Age" variant="outlined" prepend-icon="mdi-calendar-text"></v-text-field>
+            <v-text-field label="Last Name" v-model="lastName" variant="outlined" prepend-icon="mdi-account-outline"></v-text-field>
           </v-col>
         </v-row>
         <v-row>
           <v-col md="6">
-            <v-text-field label="Phone" variant="outlined" prepend-icon="mdi-phone"></v-text-field>
+            <v-date-input label="Date of Birth" v-model="dob" variant="outlined" prepend-icon="mdi-calendar-range"></v-date-input>
           </v-col>
           <v-col md="6">
-            <v-text-field label="Email" variant="outlined" prepend-icon="mdi-email"></v-text-field>
+            <v-text-field label="Age" v-model="age" variant="outlined" prepend-icon="mdi-calendar-text"></v-text-field>
           </v-col>
         </v-row>
         <v-row>
           <v-col md="6">
-            <v-text-field label="National ID" variant="outlined" prepend-icon="mdi-id-card"></v-text-field>
+            <v-text-field label="Phone" v-model="phone" variant="outlined" prepend-icon="mdi-phone"></v-text-field>
+          </v-col>
+          <v-col md="6">
+            <v-text-field label="Email" v-model="email" variant="outlined" prepend-icon="mdi-email"></v-text-field>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col md="6">
+            <v-text-field label="National ID" v-model="nationalId" variant="outlined" prepend-icon="mdi-id-card"></v-text-field>
           </v-col>
         </v-row>
           <v-col md="6">
-            <v-text-field label="Residence" variant="outlined" prepend-icon="mdi-home-outline"></v-text-field>
+            <v-text-field label="Residence" v-model="residence" variant="outlined" prepend-icon="mdi-home-outline"></v-text-field>
           <v-divider class="mb-4" color="primary" opacity=".7" thickness="3" gradient></v-divider>
              <v-row>
               <v-col>
                 <v-card-actions>
                   <v-btn color="primary" variant="outlined"> <v-icon icon="mdi-close"></v-icon> Close </v-btn>
                   <v-spacer/>
-                  <v-btn color="primary" variant="outlined"> <v-icon icon="mdi-content-save-outline"></v-icon> Save </v-btn>
+                  <v-btn color="primary" variant="outlined" @click="handleAddPatient"><v-icon icon="mdi-content-save-outline"></v-icon> Save </v-btn>
                 </v-card-actions>
               </v-col>
              </v-row>
